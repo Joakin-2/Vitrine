@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="icone.webp" type="image/x-icon">
+    <title>Vitrine Shopee</title>
+    <style>
+                * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #252525;
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 1.6rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .main-section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+    
+            display: flex;               /* NOVO */
+            flex-wrap: wrap;            /* Quebra linha se não couber */
+            justify-content: center;    /* Centraliza os itens */
+            gap: 20px;                  /* Espaço entre os itens */
+        }
+        .shop-section {
+            padding: 30px;
+            background-color: #fafafa;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .shop-item {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .shop-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .shop-item:hover {
+            transform: translateY(-10px);
+        }
+        .botao-vermais {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #333;
+            color: white;
+            width: 100%;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 16px;
+        }
+
+        .botao-vermais:hover {
+            background-color: #252525;
+            transform: scale(1.05);
+        }
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+        .search-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .search-bar {
+        padding: 10px;
+        font-size: 16px;
+        width: 40%;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .search-btn {
+        background-color: #ddd;
+        border: none;
+        padding: 12px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .search-btn i {
+        font-size: 18px;
+        color: #555;
+    }
+
+    /* Alterar cor do ícone ao passar o mouse */
+    .search-btn:hover i {
+        color: #000;
+    }
+
+        footer {
+            background-color: #252525;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 5px;
+            font-size: 1.5rem;
+        }
+
+        footer .social-icons {
+            margin-top: 20px;
+        }
+
+        footer .social-icons i {
+            margin: 0 10px;
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        footer .social-icons i:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Acessórios para Criar o Futuro!</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Pesquise aqui..." onkeyup="searchSite()">
+        <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+    </div>
+</header>
+
+<section class="main-section">
+    <div class="shop-item">
+        <img src="https://m.media-amazon.com/images/I/61yHfUgEi-L._AC_SX522_.jpg" alt="Produto 1">
+        <h3>Impressora 3D Bambu Lab A1</h3>
+        <p>Tecnologia avançada e inovação para proporcionar uma experiência única com uma estrutura aberta.</p>
+        <a href="https://amzn.to/3FlAUJM" id="openModal" class="botao-vermais">Ver Mais</a>
+    </div> 
+    
+    <div class="shop-item">
+        <img src="https://m.media-amazon.com/images/I/51xdl8H6vGL._AC_SX522_.jpg" alt="Produto 2" style="width: 51%;">
+        <!-- <h3>Impressora 3D Creality Ender 3 V3 KE</h3> -->
+        <h3>Impressora 3D Creality Ender</h3>
+        <p> O ritmo significativamente maior minimiza o tempo de espera durante o processo de impressão.</p>
+        <a href="https://amzn.to/43f7Nkr" id="openModal" class="botao-vermais">Ver Mais</a>
+    </div> 
+
+    <div class="shop-item">
+        <img src="https://m.media-amazon.com/images/I/614SM0mPBBL._AC_SX679_.jpg" alt="Produto 3" style="width: 83%;">
+        <h3>Filamento PLA Velvet (Preto)</h3>
+        <p>PLA Velvet Voolt3D - Com seu efeito aveludado e acabamento suave com um leve efeito fosco.</p>
+        <a href="https://amzn.to/4dAFfFp" id="openModal" class="botao-vermais">Ver Mais</a>
+    </div> 
+
+    <div class="shop-item">
+        <img src="https://m.media-amazon.com/images/I/61pgc5sIJrL._AC_SX679_.jpg" alt="Produto 4" style="width: 85%;">
+        <h3>Voolt3D Filamento Branco</h3>
+        <p>Grande facilidade de impressão, não precisa fechar a impressora para imprimir</p>
+        <a href="https://amzn.to/43eUGzK" id="openModal" class="botao-vermais">Ver Mais</a>
+    </div> 
+</section>
+
+<section class="main-section">
+    <div class="shop-item">
+        <img src="https://m.media-amazon.com/images/I/61fmW6Qt9BL._AC_SX522_.jpg" alt="Produto 5" style="width: 54%;">
+        <h3>Creality HALOT R6</h3>
+        <p>Impressão rápida e silenciosa; design pequeno, cabe em qualquer espaço</p>
+        <a href="https://amzn.to/4kB4gCJ" id="openModal" class="botao-vermais">Ver Mais</a>
+    </div> 
+
+    <div class="shop-item">
+        <img src="https://m.media-amazon.com/images/I/51iXXDUXcPL._AC_SX522_.jpg" alt="Produto 6" style="width: 79%;">
+        <h3>Impressora 3D Bambu Lab A1</h3>
+        <p>A A1 mini incorpora tecnologia avançada e inovação para proporcionar uma experiência única.</p>
+        <a href="https://amzn.to/4ko7gD1" id="openModal" class="botao-vermais">Ver Mais</a>
+    </div> 
+
+    <div class="shop-item">
+        <img src="https://m.media-amazon.com/images/I/71iz-ciBHVL._AC_SX679_.jpg" alt="Produto 7" style="width: 76%;">
+        <h3>Secador de filamentos Sovol</h3>
+        <p>SH02 Caixa de armazenamento selada para filamentos, suporte para carretel de impressora 3D.</p>
+        <a href="https://amzn.to/4jAQBuG" id="openModal" class="botao-vermais">Ver Mais</a>
+    </div> 
+
+    <div class="shop-item">
+        <img src="https://m.media-amazon.com/images/I/71GCCHsq8NL._AC_SX679_.jpg" alt="Produto 8" style="width: 79%;">
+        <h3>ELEGOO Impressora 3D</h3>
+        <p>Nivelamento automático inteligente, detecção inteligente, tamanho de impressão grande.</p>
+        <a href="https://amzn.to/4dGOoMJ" id="openModal" class="botao-vermais">Ver Mais</a>
+    </div> 
+</section>
+
+<footer>
+    <p style="text-align: center;">&copy; 2025 - Todos os direitos reservados</p>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/jin_sei.art" target="_blank"><i class="fab fa-instagram" style="color: rgb(193, 174, 196);"></i></a>
+        <a href="https://www.youtube.com/@Jin-SeiArt" target="_blank"><i class="fab fa-youtube"  style="color: rgb(193, 174, 196);"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61576938388245" target="_blank"><i class="fab fa-facebook"  style="color: rgb(193, 174, 196);"></i></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jinseiart.1205@gmail.com" target="_blank"><i class="fab fa-google"  style="color: rgb(193, 174, 196);"></i></a>
+    </div>
+</footer>
+
+<script>
+// Função de pesquisa
+function searchSite() {
+    var input, filter, items, h3s, i, txtValue;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+    items = document.querySelectorAll('.shop-item');
+    
+    // Loop através dos itens para verificar se o título ou descrição corresponde
+    for (i = 0; i < items.length; i++) {
+        h3s = items[i].getElementsByTagName("h3")[0];
+        txtValue = h3s.textContent || h3s.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            items[i].style.display = "";
+        } else {
+            items[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
